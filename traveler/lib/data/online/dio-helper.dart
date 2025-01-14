@@ -13,8 +13,10 @@ class DioImplementation extends DioHelper{
 
   Dio dio = Dio(
       BaseOptions(
-          baseUrl: 'https://newsapi.org/v2',
+          baseUrl: 'https://restcountries.com/v2/',
           queryParameters: {},
+          connectTimeout: Duration(seconds: 8000),
+          receiveTimeout: Duration(seconds: 8000),
           validateStatus: (statusCode){
             if(statusCode ==null){
               return false;
